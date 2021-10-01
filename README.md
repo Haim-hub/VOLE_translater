@@ -10,7 +10,7 @@ You will be told if there are any lines that does not follow the rules of the co
 ## Examples
 ### Valid Code
 Input: \
-11A0 12A1 13A2 14A3 6012 6003 6004 30A4 C000\
+11A0 12A1 13A2 14A3 6012 6003 6004 30A4 C000
 
 Output:\
 LOAD register 1 with the bit pattern from memory cell A0\
@@ -21,19 +21,19 @@ ADD the bit patterns in register 1 and 2 as floating-points and leave result in 
 ADD the bit patterns in register 0 and 3 as floating-points and leave result in register 0 as floating point\
 ADD the bit patterns in register 0 and 4 as floating-points and leave result in register 0 as floating point\
 STORE register 0 with the bit pattern from memory cell A4\
-HALT\
+HALT
 
 ### Invalid Code 1
 Input:\
-11A0 H2A1 13A2 14A3\
+11A0 H2A1 13A2 14A3
 
 Output:\
-op-Code: H2A1 not valid\
+op-Code: H2A1 not valid
 
 
 ### Invalid Code 2
 Input:\
-4AF2\
+4AF2
 
 Output:\
-MOVE operator needs a 0. Current command is 4AF2\
+MOVE operator needs a 0. Current command is 4AF2
