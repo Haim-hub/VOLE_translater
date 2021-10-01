@@ -5,8 +5,10 @@ A program so that i don't need to use table to look up what VOLE commands mean
 ## How To Use
 If nothing is done to the program, you should be able to just run the main file.\
 From here you just enter in the line which you need translated.\
-You will be told if there are any lines that does not follow the rules of the commands. The same goes if you input a line that is'nt divisble by 4.\
-To stop the program from running, you have to type "STOP"
+The program does not care wether you have spaces in between the hex. A4 43 is the same as A443 and A 4 43.s
+To stop the program from running, you have to type "STOP"\
+You will be told if there are any lines that does not follow the rules of the commands. Although there are some exeptions where it amsues the "mistake" is on purpose.\
+The program will also tell you if you dont have a corret number of hex for having complete commands.
 
 ## Examples
 ### Valid Code
