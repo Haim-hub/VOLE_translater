@@ -32,7 +32,7 @@ public class Command {
                 if(operand[0].equals("0"))
                     rS = "MOVE the bit pattern from register " + operand[1] + " to register " + operand[2];
                 else
-                    throw new IllegalArgumentException("MOVE operator needs a 0. Current command is " + opCode + operand[0] + operand[1] + operand[2]);
+                    throw new IllegalArgumentException("MOVE operator needs a 0. Current command is " + code + "\n Are you trying to say:" + opCode + 0 + operand[1] + operand[2]);
                 break;
             case "5":
                 rS = "ADD the bit patterns in register " + operand[1] + " and " + operand[2] + " as two's complement representations and leave result in register " + operand[0];
@@ -53,16 +53,25 @@ public class Command {
                 if(operand[1].equals("0"))
                     rS = "ROTATE the bit pattern in register " + operand[0] + " to the right " + operand[2] + " times";
                 else
-                    throw new IllegalArgumentException("ROTATE operator needs a 0. Current commands says "+ opCode + operand[0] + operand[1] + operand[2]);
+                    throw new IllegalArgumentException("ROTATE operator needs a 0. Current commands says "+ code + "\n Are you trying to say:" + opCode  + operand[0] + 0 + operand[2]);
                 break;
             case "B":
-                rS = "JUMP to the instruction in the memory cell at adress " + operand[1] + operand[2] + " if the bit pattern in register " + operand[0] + " is equal to the bit pattern in register 0";
+                if(operand[0].equals("0"))
+                    rS = "JUMP to the instruction in the memory cell at address " + operand[1] + operand[2];
+                else
+                    rS = "JUMP to the instruction in the memory cell at address " + operand[1] + operand[2] + " if the bit pattern in register " + operand[0] + " is equal to the bit pattern in register 0";
                 break;
             case "C":
                 if(operand[0].equals("0") && operand[1].equals("0") && operand[2].equals("0"))
                     rS = "HALT";
                 else
-                    throw new IllegalArgumentException("HALT operator needs to C000, not "+ opCode + operand[0] + operand[1] + operand[2]);
+                    throw new IllegalArgumentException("HALT operator needs to be C000, not "+ code);
+                break;
+            case "0":
+            case "D":
+            case "E":
+            case "F":
+                rS = "CODE ERROR! " + code + " IS NOT VALID! but i might on purpose i would not know";
                 break;
             default:
                 throw new IllegalArgumentException("op-Code: "+ opCode + operand[0] + operand[1] + operand[2] + " not valid ");
